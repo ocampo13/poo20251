@@ -32,10 +32,29 @@ public class Vehiculo {
         this.marca = marca;
     }
 
+    //Permite mostrar el objeto.
+
     public String toString() {
         return "Vehiculo {Marca: " + marca + "Color: " + color +
                 " Cilindraje: " + cilindraje + " Chasis: " + chasis + " Peso: "
                 + peso + "Potencia: " + potencia + "}";
     }
+
+    //Métodos de la clase
+    public void acelerar(){
+    system.System.out.println("Vehiculo acelerando.......");
+    }
+    public void frenar(){
+        system.System.out.println("Vehiculo frenando.......");
+        }
+    public void girarIzquierda(){
+        system.System.out.println("Vehiculo grirando a la izquierda.......");
+        }
+    public void girarDerecha(){
+            system.System.out.println("Vehiculo girando a la derecha.......");
+        }
+    public void retroceder(){
+        system.System.out.println("Vehiculo retrocediendo.......");
+        }
 
 }
