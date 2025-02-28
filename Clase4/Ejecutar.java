@@ -1,28 +1,29 @@
 package Clase4;
 
 public class Ejecutar {
+    
     public static void main(String[] args) {
         
-        //Creacion de los objetos de clase Vehiculo
+        //Creación de los objetos de la clase Vehiculo
 
         //Forma1
-        Vehiculo objVehiculo = new Vehiculo("Toyota", "Blanca", 4500.0, 2025, "TS3456WE", 2.3, "150HP");
+        Vehiculo objVehiculo1 = new Vehiculo("Toyota", "Blanco", 4500.0, "TS3456WE", 2.3, "150HP");
 
         //Forma2
         Vehiculo objVehiculo2;
         objVehiculo2 = new Vehiculo("Ferrari", "Rojo", 5000.0, "SEWR567UY", 1.8, "450HP");
 
+        //Mostrar la marca del objeto vehículo
+        System.out.println(objVehiculo1.getMarca());
 
-        //Mostrar la marca del objeto vehiculo
-        System.out.println(objVehiculo.getMarca());
+        //Se va modificar la marca del vehículo del objeto objVehiculo1
+        objVehiculo1.setMarca("Chevrolet");
 
-        //Se va modificarla marca del vehiculo del objeto objVehiculo1
-        objVehiculo.setMarca("Chevrolet");
-
-        //Mostrar todo el objeto
-        System.out.println(objVehiculo.toString());
+        //Mostrar todo objeto
+        System.out.println(objVehiculo1.toString());
         System.out.println(objVehiculo2);
 
 
     }
 }
+
