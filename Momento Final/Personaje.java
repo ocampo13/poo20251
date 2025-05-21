@@ -1,10 +1,6 @@
-import java.util.Random;
-
 public abstract class Personaje {
     protected String nombre;
     protected int puntosDeVida;
-    protected final int MAX_DANO = 30;
-    protected final int MIN_DANO = 10;
 
     public Personaje(String nombre) {
         this.nombre = nombre;
@@ -25,10 +21,10 @@ public abstract class Personaje {
     }
 
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
 
     public int getPuntosDeVida() {
-        return this.puntosDeVida;
+        return puntosDeVida;
     }
 }
