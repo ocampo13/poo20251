@@ -8,7 +8,8 @@ public class Main {
         // Creating specific animal objects
         Rabbit myRabbit = new Rabbit("white", 15.5);
         Cat myCat = new Cat("Persian");
-        
+        Dog myDog = new Dog("Labrador", "Large");
+
         // Part 1: Using objects with their specific types
         System.out.println("--- Part 1: Specific Animal Behaviors ---");
         
@@ -21,27 +22,35 @@ public class Main {
         myCat.eat();
         myCat.move();
         myCat.purr(); // Cat-specific method
+
+        System.out.println("\nDog Actions:");
+        myDog.eat();
+        myDog.move();
+        myDog.wagTail(); // Dog-specific method
         
         // Part 2: Demonstrating Polymorphism
         System.out.println("\n--- Part 2: Polymorphism Magic! ---");
         
-        // Here's the magic: We can treat both as Animals!
-        Animal animal1 = myRabbit;  // A Rabbit IS an Animal
-        Animal animal2 = myCat;     // A Cat IS an Animal
+        // Here's the magic: We can treat them all as Animals!
+        Animal animal1 = myRabbit;
+        Animal animal2 = myCat;
+        Animal animal3 = myDog;
         
-        // We can call interface methods on both
         System.out.println("\nTreating them as generic Animals:");
         makeAnimalDoThings(animal1);
         makeAnimalDoThings(animal2);
+        makeAnimalDoThings(animal3);
         
         // Part 3: Array of different animals
         System.out.println("\n--- Part 3: Animal Array ---");
         
-        Animal[] zoo = new Animal[4];
+        Animal[] zoo = new Animal[6];
         zoo[0] = new Rabbit("brown", 12.0);
         zoo[1] = new Cat("Siamese");
         zoo[2] = new Rabbit("gray", 14.5);
         zoo[3] = new Cat("Tabby");
+        zoo[4] = new Dog("Beagle", "Medium");
+        zoo[5] = new Dog("German Shepherd", "Large");
         
         System.out.println("Making all animals in the zoo make sounds:");
         for (Animal animal : zoo) {
@@ -57,20 +66,28 @@ public class Main {
             
             if (animal instanceof Rabbit) {
                 System.out.println("This is a Rabbit!");
-                Rabbit rabbit = (Rabbit) animal; // Cast back to Rabbit
-                rabbit.dig(); // Now we can use Rabbit-specific methods
+                Rabbit rabbit = (Rabbit) animal;
+                rabbit.dig();
             } else if (animal instanceof Cat) {
                 System.out.println("This is a Cat!");
-                Cat cat = (Cat) animal; // Cast back to Cat
+                Cat cat = (Cat) animal;
                 if (cat.huntMouse()) {
                     System.out.println("The hunt was successful!");
                 } else {
                     System.out.println("The mouse got away!");
                 }
+            } else if (animal instanceof Dog) {
+                System.out.println("This is a Dog!");
+                Dog dog = (Dog) animal;
+                if (dog.guardHouse()) {
+                    System.out.println("The dog is guarding successfully.");
+                } else {
+                    System.out.println("The dog got distracted while guarding.");
+                }
             }
         }
     }
-    
+
     // Helper method that works with ANY Animal
     public static void makeAnimalDoThings(Animal animal) {
         System.out.println("\n" + animal.getSpecies() + " daily routine:");
